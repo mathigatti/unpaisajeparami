@@ -97,7 +97,7 @@ async function tick2() {
 		"author": "UN PAISAJE PARA MÍ",
 		"title": "de Sivia Gómez Giusto y Aliana Alvarez Pacheco",
 		"caption": "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.",
-		"audio_url": "https://github.com/mathigatti/unpaisajeparami/raw/master/audios/A.mp3",
+		"audio_url": "/audios/A.mp3",
 		"current_time": 1764,
 		"duration": 1764,
 		"song_start_time": "12-Oct-2022 20:11:41.525167"
