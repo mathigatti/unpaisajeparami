@@ -2,20 +2,9 @@ const title = document.getElementById("expo-title");
 const author = document.getElementById("expo-author");
 const caption = document.getElementById("caption");
 
-const params = new URLSearchParams(window.location.search);
-
-var proy = "mp";
-proy = params.get("proy", proy);
-
-if (proy == null){
-	proy = "mp"
-}
-
-devices_names = {
-	mp: "UN PAISAJE PARA MÍ",
-};
-
-document.getElementById("overlay-text").innerText = devices_names[proy];
+var caption_txt = "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.";
+var author_txt = "UN PAISAJE PARA MÍ";
+var title_txt = "de Sivia Gómez Giusto y Aliana Alvarez Pacheco";
 
 function setOverlay(on, trans = false) {
 	const overlay = document.getElementById("overlay");
@@ -24,21 +13,15 @@ function setOverlay(on, trans = false) {
 }
 
 function waitForUserIneraction() {
+	document.getElementById("overlay-text").innerText = title_txt;
 	setOverlay(true);
-	document.body.onclick = () => {
+	window.onclick = () => {
 		setOverlay(false, true);
-		document.body.onclick = null;
+		window.onclick = null;
 
-		var data = {
-			"caption": "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.",
-			"author": "UN PAISAJE PARA MÍ",
-			"title": "de Sivia Gómez Giusto y Aliana Alvarez Pacheco",
-			"audio_url": "/audios/A.mp3",
-		};
-
-		caption.innerHTML = data["caption"]; // use of italic tag in captions
-		author.innerText = data["author"];
-		title.innerText = data["title"];
+		caption.innerHTML = caption_txt; // use of italic tag in captions
+		author.innerText = author_txt;
+		title.innerText = title_txt;
 	
 		document.getElementById("caption").style.fontSize = "95%";
 
