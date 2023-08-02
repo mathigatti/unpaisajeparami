@@ -1,8 +1,6 @@
-const caption = document.getElementById("caption");
-const code = document.getElementById("expo-code");
-const author = document.getElementById("expo-author");
 const title = document.getElementById("expo-title");
-const proyText = document.getElementById("player-proy-txt");
+const author = document.getElementById("expo-author");
+const caption = document.getElementById("caption");
 
 const params = new URLSearchParams(window.location.search);
 
@@ -17,7 +15,6 @@ devices_names = {
 	mp: "UN PAISAJE PARA MÍ",
 };
 
-proyText.innerText = devices_names[proy];
 document.getElementById("overlay-text").innerText = devices_names[proy];
 
 function setOverlay(on, trans = false) {
@@ -34,18 +31,15 @@ function waitForUserIneraction() {
 
 		var data = {
 			"caption": "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.",
-			"code": "",
 			"author": "UN PAISAJE PARA MÍ",
 			"title": "de Sivia Gómez Giusto y Aliana Alvarez Pacheco",
 			"audio_url": "/audios/A.mp3",
 		};
 
 		caption.innerHTML = data["caption"]; // use of italic tag in captions
-		code.innerText = data["code"];
 		author.innerText = data["author"];
 		title.innerText = data["title"];
 	
-		document.getElementById("player-proy-txt").style.visibility = "hidden";
 		document.getElementById("caption").style.fontSize = "95%";
 
 	};
