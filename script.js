@@ -2,9 +2,9 @@ const title = document.getElementById("expo-title");
 const author = document.getElementById("expo-author");
 const caption = document.getElementById("caption");
 
-var caption_txt = "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.";
-var author_txt = "UN PAISAJE PARA MÍ";
-var title_txt = "de Sivia Gómez Giusto y Aliana Alvarez Pacheco";
+const caption_txt = "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Prodanza  y Paraíso Club de Artes Escénicas.";
+const author_txt = "de Sivia Gómez Giusto y Aliana Alvarez Pacheco";
+const title_txt = "UN PAISAJE PARA MÍ";
 
 function setOverlay(on, trans = false) {
 	const overlay = document.getElementById("overlay");
@@ -19,9 +19,9 @@ function waitForUserIneraction() {
 		setOverlay(false, true);
 		window.onclick = null;
 
-		caption.innerHTML = caption_txt; // use of italic tag in captions
-		author.innerText = author_txt;
 		title.innerText = title_txt;
+		author.innerText = author_txt;
+		caption.innerHTML = caption_txt; // use of italic tag in captions
 	
 		document.getElementById("caption").style.fontSize = "95%";
 
