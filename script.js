@@ -105,7 +105,7 @@ async function tick2() {
 	correctAudioState2(player, data);
 }
 
-tick2();
+//tick2();
 
 function updateProgress() {
 	var currentTime = player.currentTime();
