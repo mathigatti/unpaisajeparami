@@ -33,39 +33,22 @@ waitForUserIneraction();
 
 const audioPlayer = document.getElementById('audioPlayer');
 
-function loadAndPlayAudioFromTime(timeInSeconds) {
-  /*
-  if (!audioPlayer.paused) {
-	audioPlayer.pause();
+const interval = 1;
+const totalDuration = 1765;
+
+function simulateLoop(i) {
+  if (i < totalDuration) {
+    audioPlayer.currentTime = i;
+    i += interval;
+    setTimeout(() => simulateLoop(i), 5);
   }
-  */
-  // Seek to the specified time
-  audioPlayer.currentTime = timeInSeconds;
-
-  // Load and play the audio
-  audioPlayer.play();
 }
-
-// Function to go back to the beginning (0:00) and play the audio
-function playFromBeginning() {
-  loadAndPlayAudioFromTime(0);
-}
-
-// Add an event listener to the audio player for the 'play' event
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 var first_time = true;
 audioPlayer.addEventListener('play', function () {
 	if(first_time) {
 		first_time=false;
-
-		var i = 0;
-		while (i < 60 * 20) {
-			loadAndPlayAudioFromTime(i);
-			i = i + 10;
-			sleep(100)
-		}
-		playFromBeginning();
-		audioPlayer.pause();
+		simulateLoop(0)
 	}
+	audioPlayer.currentTime = 0
 });
