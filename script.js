@@ -30,7 +30,6 @@ function waitForUserIneraction() {
 
 waitForUserIneraction();
 
-
 const audioPlayer = document.getElementById('audioPlayer');
 
 const interval = 10;
@@ -45,6 +44,7 @@ function simulateLoop(i) {
 }
 
 var first_time = true;
+/*
 audioPlayer.addEventListener('play', function () {
 	if(first_time) {
 		first_time=false;
@@ -52,3 +52,4 @@ audioPlayer.addEventListener('play', function () {
 		simulateLoop(0);
 	}
 });
+*/
