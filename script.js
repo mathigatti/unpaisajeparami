@@ -33,14 +33,14 @@ waitForUserIneraction();
 
 const audioPlayer = document.getElementById('audioPlayer');
 
-const interval = 1;
+const interval = 10;
 const totalDuration = 1765;
 
 function simulateLoop(i) {
   if (i < totalDuration) {
     audioPlayer.currentTime = i;
     i += interval;
-    setTimeout(() => simulateLoop(i), 5);
+    setTimeout(() => simulateLoop(i), 1000);
   }
 }
 
@@ -48,7 +48,7 @@ var first_time = true;
 audioPlayer.addEventListener('play', function () {
 	if(first_time) {
 		first_time=false;
-		simulateLoop(0)
+		audioPlayer.pause();
+		simulateLoop(0);
 	}
-	audioPlayer.currentTime = 0
 });
