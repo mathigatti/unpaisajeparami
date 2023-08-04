@@ -27,40 +27,24 @@ function iOS() {
 	);
 }
 
-
-function waitForUserIneraction() {
+window.addEventListener("load", () => {
+	
 	document.getElementById("overlay-text").innerText = title_txt;
 	setOverlay(true);
-	if (iOS()){
-		document.getElementById("overlay-icon").onclick = () => {
-			setOverlay(false, true);
-			document.getElementById("overlay-icon").onclick = null;
+	overlayButton = document.getElementById("overlay-icon")
 	
-			title.innerText = title_txt;
-			author.innerText = author_txt;
-			caption.innerHTML = caption_txt; // use of italic tag in captions
-		
-			document.getElementById("caption").style.fontSize = "95%";
+	window.addEventListener("click", () => {
+		setOverlay(false, true);
+		window.removeEventListener("click", null);
 	
-		};
+		title.innerText = title_txt;
+		author.innerText = author_txt;
+		caption.innerHTML = caption_txt; // use of italic tag in captions
+	
+		caption.style.fontSize = "95%";
+	});
 
-	} else {
-		window.onclick = () => {
-			setOverlay(false, true);
-			window.onclick = null;
-	
-			title.innerText = title_txt;
-			author.innerText = author_txt;
-			caption.innerHTML = caption_txt; // use of italic tag in captions
-		
-			document.getElementById("caption").style.fontSize = "95%";
-	
-		};
-	
-	}
-}
-
-waitForUserIneraction();
+});
 
 const audioPlayer = document.getElementById('audioPlayer');
 
