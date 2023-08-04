@@ -12,14 +12,9 @@ body {
     background-color: black;
     color: white;
     margin: 0;
+    height: 100%;
 }
 
-
-a {
-    color: white;
-    text-decoration: none;
-
-}
 
 .noselect {
     -webkit-tap-highlight-color: transparent;
@@ -38,24 +33,10 @@ a {
 /**/
 
 .container {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 60);
+    height: 100%;
     margin-top: 2vh;
     margin-left: 8vw;
     margin-right: 8vw;
-}
-
-/**/
-
-.main-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 100%;
 }
 
 .title {
@@ -65,15 +46,10 @@ a {
     margin-top: 15%;
 }
 
-#start-btn-container {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
-}
-
 :root {
     --btn-size: 6vh;
 }
+
 
 .btn {
     border: 2px solid rgba(255, 255, 255, 0.9);
@@ -98,100 +74,24 @@ a {
 
 /**/
 
-.proy-menu {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.proy-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    border-style: none;
-    /* margin-bottom: 10%; */
-}
-
-.proy-table td {
-    overflow: visible;
-    padding: 0.9vh;
-    width: 50%;
-}
-
-.proy-table td .btn {
-    position: relative;
-    left: calc(50% - (var(--btn-size)*0.5));
-}
-
-#mp {
-    background-color: white;
-    color: black;
-}
-
-.proy-txt {
-    margin-top: 10%;
-    line-height: 150%;
-    letter-spacing: 0.5vw;
-    transform: scale(0.9, 1);
-}
-
-/**/
-
 .player {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-}
-
-.expo-info {
-    line-height: 150%;
-    margin-bottom: 10%;
 }
 
 .expo-title {
     font-weight: 500;
-}
-
-.player-proy-txt {
-    margin-bottom: 6%;
-}
-
-.progress-container {
-    margin-bottom: 10%;
-}
-
-#play-icon {
+    font-size: 130%;
     text-align: center;
-    width: 100%;
-    /* Adjust the width as needed */
-    font-family: "Material Icons";
-    padding-top: 70px;
-    font-size: calc(var(--btn-size) * 0.9);
-    /* other styling as required */
 }
 
-.progress-container .time-info {
-    display: inline-flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.sep {
-    width: 100%;
-}
-
-.time-info .time {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-}
-
-.caption-container {
-    flex: 2;
+.expo-info {
+    line-height: 150%;
+    margin-bottom: 20%;
+    text-align: center;
 }
 
 .caption-container .caption {
@@ -200,18 +100,42 @@ a {
     line-height: 140%;
 }
 
-.btn-container {
-    display: inline-flex;
-    flex-direction: row;
-    align-content: space-between;
+/* PLAYER */
+
+.progress-container {
     width: 100%;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    vertical-align: middle;
+    margin-bottom: 20%; /* Adjust this value to add some space between the expo info and the audio player */
 }
 
+audio {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ffffff; /* Replace with your desired border color */
+    border-radius: 50px; /* Add some border radius for a rounded appearance */
+    padding: 10px; /* Add some padding for better aesthetics */
+}
+
+/* Add white lines to mimic a classic cassette player look */
+audio:before,
+audio:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+audio:before {
+    transform: translateY(-50%);
+}
+
+audio:after {
+    transform: translateY(50%);
+}
+
+/* OVERLAY */
 
 #overlay {
     position: fixed;
@@ -264,38 +188,4 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-}
-
-
-/* Apply some basic styles to the audio element */
-audio {
-    width: 100%;
-    /* Make the audio player take the full width of its container */
-}
-
-
-
-/* Add custom styling to the audio player */
-audio {
-    background-color: black;
-    position: relative;
-}
-
-/* Add white lines to mimic a classic cassette player look */
-audio:before,
-audio:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-}
-
-audio:before {
-    transform: translateY(-50%);
-}
-
-audio:after {
-    transform: translateY(50%);
 }
