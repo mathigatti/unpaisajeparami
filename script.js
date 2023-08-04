@@ -30,7 +30,10 @@ function iOS() {
 window.addEventListener("load", () => {
 
 	if (iOS()){
-
+		title.innerText = title_txt;
+		author.innerText = author_txt;
+		caption.innerHTML = caption_txt; // use of italic tag in captions
+		caption.style.fontSize = "95%";
 	} else {
 		document.getElementById("overlay-text").innerText = title_txt;
 		setOverlay(true);
