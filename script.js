@@ -12,20 +12,52 @@ function setOverlay(on, trans = false) {
 	overlay.style.opacity = on ? "1" : "0";
 }
 
+function iOS() {
+	return (
+		[
+			"iPad Simulator",
+			"iPhone Simulator",
+			"iPod Simulator",
+			"iPad",
+			"iPhone",
+			"iPod",
+		].includes(navigator.platform) ||
+		// iPad on iOS 13 detection
+		(navigator.userAgent.includes("Mac") && "ontouchend" in document)
+	);
+}
+
+
 function waitForUserIneraction() {
 	document.getElementById("overlay-text").innerText = title_txt;
 	setOverlay(true);
-	window.onclick = () => {
-		setOverlay(false, true);
-		window.onclick = null;
-
-		title.innerText = title_txt;
-		author.innerText = author_txt;
-		caption.innerHTML = caption_txt; // use of italic tag in captions
+	if (iOS()){
+		document.getElementById("overlay-icon").onclick = () => {
+			setOverlay(false, true);
+			document.getElementById("overlay-icon").onclick = null;
 	
-		document.getElementById("caption").style.fontSize = "95%";
+			title.innerText = title_txt;
+			author.innerText = author_txt;
+			caption.innerHTML = caption_txt; // use of italic tag in captions
+		
+			document.getElementById("caption").style.fontSize = "95%";
+	
+		};
 
-	};
+	} else {
+		window.onclick = () => {
+			setOverlay(false, true);
+			window.onclick = null;
+	
+			title.innerText = title_txt;
+			author.innerText = author_txt;
+			caption.innerHTML = caption_txt; // use of italic tag in captions
+		
+			document.getElementById("caption").style.fontSize = "95%";
+	
+		};
+	
+	}
 }
 
 waitForUserIneraction();
