@@ -3,7 +3,7 @@ const author = document.getElementById("expo-author");
 const caption = document.getElementById("caption");
 
 const caption_txt = "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Paraíso Club de Artes Escénicas y Prodanza.";
-const author_txt = "de Sivia Gómez Giusto y Aliana Alvarez Pacheco";
+const author_txt = "de Silvia Gómez Giusto y Aliana Alvarez Pacheco";
 const title_txt = "UN PAISAJE PARA MÍ";
 
 function setOverlay(on, trans = false) {
