@@ -1,9 +1,7 @@
 const title = document.getElementById("expo-title");
-const author = document.getElementById("expo-author");
 const caption = document.getElementById("caption");
 
 const caption_txt = "Esta obra cuenta con el apoyo de Amigos del Bellas Artes, Ensayar Museos - Fundación Williams 2022, Paraíso Club de Artes Escénicas y Prodanza.";
-const author_txt = "de Silvia Gómez Giusto y Aliana Alvarez Pacheco";
 const title_txt = "UN PAISAJE PARA MÍ";
 
 function setOverlay(on, trans = false) {
@@ -31,7 +29,6 @@ window.addEventListener("load", () => {
 
 	if (iOS()){
 		title.innerText = title_txt;
-		author.innerText = author_txt;
 		caption.innerHTML = caption_txt; // use of italic tag in captions
 		caption.style.fontSize = "95%";
 	} else {
@@ -44,7 +41,6 @@ window.addEventListener("load", () => {
 			window.removeEventListener("click", null);
 		
 			title.innerText = title_txt;
-			author.innerText = author_txt;
 			caption.innerHTML = caption_txt; // use of italic tag in captions
 		
 			caption.style.fontSize = "95%";
